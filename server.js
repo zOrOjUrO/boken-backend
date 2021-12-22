@@ -11,15 +11,15 @@ app.use(function(req, res, next) {
     next();
   });
 
-let corsOptions = {
-    origin: "http://localhost:4040"
-};
+// let corsOptions = {
+//     origin: "http://localhost:4040/",
+// };
 
 const db = require("./models");
 db.sequelize.sync();
 
 
-app.use(cors(corsOptions));
+// app.use(cors(corsOptions));
 
 // parse requests of content-type - application/json
 app.use(express.json());

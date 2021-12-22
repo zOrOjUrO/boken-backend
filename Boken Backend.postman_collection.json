@@ -1,0 +1,486 @@
+{
+	"info": {
+		"_postman_id": "e21d01fb-82ce-453e-883c-f8ed4a40c317",
+		"name": "Boken Backend",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Get Cheapest Flight",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:4040/api/flight/fetch/:origin/:destination/:depart_date/:page",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "4040",
+					"path": [
+						"api",
+						"flight",
+						"fetch",
+						":origin",
+						":destination",
+						":depart_date",
+						":page"
+					],
+					"variable": [
+						{
+							"key": "origin",
+							"value": "BLR"
+						},
+						{
+							"key": "destination",
+							"value": "MOW"
+						},
+						{
+							"key": "depart_date",
+							"value": "2022-01"
+						},
+						{
+							"key": "page",
+							"value": "1"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Nearest Airport",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:4040/api/flight/closestAirport",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "4040",
+					"path": [
+						"api",
+						"flight",
+						"closestAirport"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get Airport Details by IATA Code",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:4040/api/flight/airport/:iata",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "4040",
+					"path": [
+						"api",
+						"flight",
+						"airport",
+						":iata"
+					],
+					"variable": [
+						{
+							"key": "iata",
+							"value": "DEL"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get Train Details By Name or Number",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:4040/api/train/find/:query",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "4040",
+					"path": [
+						"api",
+						"train",
+						"find",
+						":query"
+					],
+					"variable": [
+						{
+							"key": "query",
+							"value": "ooty"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get Hotels Near A Particular Place",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:4040/api/hotel/find/:query",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "4040",
+					"path": [
+						"api",
+						"hotel",
+						"find",
+						":query"
+					],
+					"variable": [
+						{
+							"key": "query",
+							"value": "bangalore"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "List All the Cities in the database",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:4040/mongo/city/getCities",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "4040",
+					"path": [
+						"mongo",
+						"city",
+						"getCities"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Create City",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"city\": \"cityName\",\r\n    \"state\": \"stateCode\",\r\n    \"temp\": Number,\r\n    \"season\": \"Seasons\",\r\n    \"duration\": \"in months\",\r\n    \"airport\": \"IATA code\",\r\n    \"attraction\": [{\r\n        \"name\":\"attractionName\",\r\n        \"loc\":\"lat, lng\"\r\n    }],\r\n    \"about\": \"history\"\r\n}"
+				},
+				"url": {
+					"raw": "http://localhost:4040/mongo/city/createCity",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "4040",
+					"path": [
+						"mongo",
+						"city",
+						"createCity"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Fetch City Details By Name",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:4000/mongo/city/getCity/:cityName",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "4000",
+					"path": [
+						"mongo",
+						"city",
+						"getCity",
+						":cityName"
+					],
+					"variable": [
+						{
+							"key": "cityName",
+							"value": ""
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get All Users",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:4040/pg/user/all",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "4040",
+					"path": [
+						"pg",
+						"user",
+						"all"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Create User",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"FirstName\": \"First\",\r\n    \"MidName\": \"Middle\",\r\n    \"LastName\": \"Last\",\r\n    \"Phn\": \"0000000000\",\r\n    \"Married\": 1,\r\n    \"Address\": \" \",\r\n    \"Email\": \"test@gmail.com\",\r\n    \"Gender\": \"Other\",\r\n    \"DocumentID\": \" \"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:4040/pg/user/create",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "4040",
+					"path": [
+						"pg",
+						"user",
+						"create"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Fetch User by ID",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:4040/pg/user/find/:id",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "4040",
+					"path": [
+						"pg",
+						"user",
+						"find",
+						":id"
+					],
+					"variable": [
+						{
+							"key": "id",
+							"value": ""
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Update User By ID",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"FirstName\": \"First\",\r\n    \"MidName\": \"Middle\",\r\n    \"LastName\": \"Last\",\r\n    \"Phn\": \"0000000000\",\r\n    \"Married\": 1,\r\n    \"Address\": \" \",\r\n    \"Email\": \"test@gmail.com\",\r\n    \"Gender\": \"Other\",\r\n    \"DocumentID\": \" \"\r\n}"
+				},
+				"url": {
+					"raw": "http://localhost:4040/pg/user/update/:id",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "4040",
+					"path": [
+						"pg",
+						"user",
+						"update",
+						":id"
+					],
+					"variable": [
+						{
+							"key": "id",
+							"value": ""
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Delete User By ID",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:4040/pg/user/del/:id",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "4040",
+					"path": [
+						"pg",
+						"user",
+						"del",
+						":id"
+					],
+					"variable": [
+						{
+							"key": "id",
+							"value": ""
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Create Guide",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"FirstName\": \"First\",\r\n    \"MidName\": \"Middle\",\r\n    \"LastName\": \"Last\",\r\n    \"Phn\": \"0000000000\",\r\n    \"Address\": \" \",\r\n    \"Email\": \"test@gmail.com\",\r\n    \"Gender\": \"Other\",\r\n    \"DocumentID\": \" \"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:4040/pg/guide/create",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "4040",
+					"path": [
+						"pg",
+						"guide",
+						"create"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Fetch Guide by ID",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:4040/pg/guide/find/:id",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "4040",
+					"path": [
+						"pg",
+						"guide",
+						"find",
+						":id"
+					],
+					"variable": [
+						{
+							"key": "id",
+							"value": ""
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Create Document",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"AadharUUID\": \"0102391091204\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:4040/pg/doc/create",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "4040",
+					"path": [
+						"pg",
+						"doc",
+						"create"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Fetch document by ID",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:4040/pg/doc/find/:id",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "4040",
+					"path": [
+						"pg",
+						"doc",
+						"find",
+						":id"
+					],
+					"variable": [
+						{
+							"key": "id",
+							"value": ""
+						}
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
